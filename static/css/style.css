@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+:root{
+    --color-primary: #004d8b;
+    --color-text: rgb(168, 168, 168);
+    --font-main: Roboto;
+    --font-text: Roboto;
+}
+
+/* Main settings */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-text);
+}
+
+@font-face{
+    font-family: SUNDAY-bold;
+    src: url('../fonts/SUNDAY.ttf')
+}
+
+@font-face{
+    font-family: SUNDAY-regular;
+    src: url('../fonts/SUNDAY.ttf')
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-main);
+}
+
+/* end Main settings */
+
+/* Layoyt settings */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--color-primary);
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    text-transform: uppercase;
+    font-family: var(--font-main);
+    padding: 10px;
+}
+
+nav ul li a:hover{
+    color: var(--color-text)
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 50px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-text);
+    width: 50%;
+    list-style-type: none;
+}
+
+.list li{
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-detail_inicio{
+    background-color: var(--color-primary);
+    color: aliceblue;
+    border-radius: 5px;
+    margin: 5px;
+    min-width: 300px;
+}
+
+
+.btn-detail{
+    background-color: var(--color-primary);
+    color: aliceblue;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.btn-detail:hover{
+    background-color: aliceblue;
+    color: var(--color-primary);
+}
+
+.btn-edit{
+    background-color: #ccb765;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.btn-edit:hover{
+    background-color: aliceblue;
+    color: #ccb765;
+}
+
+.btn-delete{
+    background-color: #a10e2e;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.btn-delete:hover{
+    background-color: aliceblue;
+    color: #a10e2e;
+}
+
+.search{
+    margin: 20px;
+    width: 50%;
+}
+
+.search-bar {
+    padding: 5px;
+    width: 80%;
+}
+
+.btn-search {
+    width: 19%;
+    background-color: #ccb765;
+    color: aliceblue;
+    outline: none;
+    border: 0;
+    box-shadow: 0;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #948547;
+}
+
+.aux-btns {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.aux-btns a{
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.alert-success{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(22, 158, 112);
+    color: rgb(255, 255, 255);
+}
+
+/* end Layoyt settings */
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.card{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(64, 115, 226);
+    margin: 20px;
+}
+
+.card a{
+    color: white;
+    text-decoration: none;
+}
+
+.card:hover {
+    background-color: #3c4f5e;
+}
+
+.contenedor_tabla{
+    width: 80vw;
+}
+
+table{
+    width: 100%;
+    border:none;
+    border-spacing: 0;
+}
+
+th{
+    text-align: right;
+}
+
+.tr{
+    margin: 0;
+    padding: 5px;
+    border:none;
+}
+
+.tr:hover{
+    margin: 0;
+    padding: 5px;
+    background-color: rgb(209, 209, 209);
+}
+
+.head{
+    background-color: #546572;
+    color: aliceblue !important;
+}
+
+td{
+    margin: 0;
+    padding: 5px;
+    border:none;
+}
+
+.title{
+    background-color: rgb(37, 37, 37);
+    color: #fffddb;
+    width: 80vw;
+    text-align: center;
+    padding: 10px;
+}
+
+.no_mostrar{
+    visibility: hidden;
+}
+
+input, select {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--color-text);
+    padding: 5px;
+    width: 100%;
+}
+
+.btn-send {
+    width: 81%;
+    background-color: var(--color-primary);
+    color: aliceblue;
+    padding: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aux-btns-form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.aux-btns-form a{
+    padding-right: 10px;
+    text-decoration: none;
+}

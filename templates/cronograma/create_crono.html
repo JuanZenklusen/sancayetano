@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %} Nuevo cronograma {% endblock %}
+
+{% block 'styles' %}
+{% load static %}
+{% endblock %}
+
+{% block 'content' %}
+
+<span class="aux-btns-form">
+    <a href="{% url 'cronograma' %}" class="btn btn-detail">Volver atrás</a>
+    <a href="{% url 'index' %}" class="btn btn-detail">Ir al inicio</a>
+</span>
+
+<form action="{% url 'create_crono' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <div class="btn-wrapper">
+        <input type="submit" value="Guardar" class="btn btn-send">
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'layout/base.html' %}
+
+{% block 'content' %} 
+    <h3 class="title">Bienvenido al gestor de cronograma de música de San Cayetano</h3>
+    <br>
+    <a href="{% url 'create_crono' %}" class="btn btn-detail_inicio">Crear nuevo cronograma</a>
+    <a href="{% url 'create_musico' %}" class="btn btn-detail_inicio">Agregar nuevo músico</a>
+
+
+{% endblock %}

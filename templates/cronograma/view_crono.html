@@ -1,0 +1,58 @@
+{% extends 'layout/base.html' %}
+{% block 'content' %}
+<span>
+    <a href="{% url 'cronograma' %}" class="btn btn-detail">Volver atrás</a>
+    <a href="{% url 'index' %}" class="btn btn-detail">Ir al inicio</a>
+</span>
+<br>
+<h1 class="title">{{cronograma}}</h1>
+
+<div class="contenedor_tabla">
+    <table>
+        <thead class="head">
+            {#<td>id</td>#}
+            <td>Fecha</td>
+            <td>Horario</td>
+            <td>Musico</td>
+            <td>Capilla</td>
+            <td>Responsable</td>
+            <td>Observaciones</td>
+            <td></td>
+        </thead>
+        {% for misas in misa %}
+        <tr class="tr">
+            {#<td>{{misas.id}}</td>#}
+            <td>{{misas.fecha}}</td>
+            <td>{{misas.horario}} hs.</td>
+            <td>{{misas.musico}}</td>
+            <td>{{misas.capilla}}</td>
+            <td>{{misas.responsable}}</td>
+            <td>{{misas.observaciones}}</td>
+            <td>
+                <a href="{% url 'misa_delete' misa=misas.id %}"><span class="material-symbols-outlined">
+                    delete
+                    </span></a>
+            </td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<br>
+<h1 class="title">Agregar misa al cronograma</h1>
+<br>
+<form action="#" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <div class="btn-wrapper">
+        <input type="submit" value="Guardar" class="btn btn-send">
+    </div>
+</form>
+
+<br>
+
+
+{% endblock %}

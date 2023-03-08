@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %}{% endblock %}
+
+{% block 'styles' %}
+{% load static %}
+{% endblock %}
+
+{% block 'content' %}
+
+<h1>Cronogramas</h1>
+<br>
+<span class="aux-btns-form">
+    <a href="{% url 'index' %}" class="btn btn-detail">Ir al inicio</a>
+    <a href="{% url 'create_crono' %}" class="btn btn-detail">Crear nuevo cronograma</a>
+</span>
+
+<br>
+<ul class="list">
+    {% for cronogramas in cronograma %}
+        <li> {{cronogramas}}
+            <span>
+                <a href="{% url 'view_crono' id=cronogramas.id %}" class="btn btn-detail">Ver</a>
+            </span>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
